@@ -1,10 +1,54 @@
-import colorama
-from colorama import Fore, Back, Style
+class Team:
+    def __init__(self, name, coach):
+        self.name = name
+        self.coach = coach
+        self.players = []
+        self.sponsors = []
 
-colorama.init(autoreset=True)
+    def add_player(self, player):
+        self.players.append(player)
 
-print(Fore.RED + "Red text")
-print(Fore.GREEN + "Green text")
-print(Back.YELLOW + "Yellow background")
-print(Style.BRIGHT + "Bright text")
-print(Style.RESET_ALL)
+    def add_sponsor(self, sponsor):
+        self.sponsors.append(sponsor)
+
+
+# --- Клас Гравця ---
+class Player:
+    def __init__(self, nickname, role, age):
+        self.nickname = nickname
+        self.role = role
+        self.age = age
+
+
+# --- Клас Тренера ---
+class Coach:
+    def __init__(self, name, experience_years):
+        self.name = name
+        self.experience_years = experience_years
+
+
+# --- Клас Турніру ---
+class Tournament:
+    def __init__(self, title, prize_pool):
+        self.title = title
+        self.prize_pool = prize_pool
+        self.teams = []
+
+    def add_team(self, team):
+        self.teams.append(team)
+
+
+# --- Клас Матчу ---
+class Match:
+    def __init__(self, team1, team2, score, tournament):
+        self.team1 = team1
+        self.team2 = team2
+        self.score = score
+        self.tournament = tournament
+
+
+# --- Клас Спонсора ---
+class Sponsor:
+    def __init__(self, name, money):
+        self.name = name
+        self.money = money
