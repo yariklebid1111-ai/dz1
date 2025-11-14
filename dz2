@@ -12,7 +12,7 @@ class Team:
         self.sponsors.append(sponsor)
 
 
-# --- Клас Гравця ---
+
 class Player:
     def __init__(self, nickname, role, age):
         self.nickname = nickname
@@ -20,14 +20,14 @@ class Player:
         self.age = age
 
 
-# --- Клас Тренера ---
+
 class Coach:
     def __init__(self, name, experience_years):
         self.name = name
         self.experience_years = experience_years
 
 
-# --- Клас Турніру ---
+
 class Tournament:
     def __init__(self, title, prize_pool):
         self.title = title
@@ -38,7 +38,7 @@ class Tournament:
         self.teams.append(team)
 
 
-# --- Клас Матчу ---
+
 class Match:
     def __init__(self, team1, team2, score, tournament):
         self.team1 = team1
@@ -47,7 +47,7 @@ class Match:
         self.tournament = tournament
 
 
-# --- Клас Спонсора ---
+
 class Sponsor:
     def __init__(self, name, money):
         self.name = name
