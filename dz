@@ -1,19 +1,54 @@
-result = []
+class Team:
+    def __init__(self, name, coach):
+        self.name = name
+        self.coach = coach
+        self.players = []
+        self.sponsors = []
 
-def divider(a, b):
-    if a < b:
-        raise ValueError("a < b — не можна ділити!")
-    if b > 100:
-        raise IndexError("b > 100 — заборонене значення!")
-    return a / b
+    def add_player(self, player):
+        self.players.append(player)
 
-data = {10: 2, 2: 5, "123": 4, 18: 0, (1,2): 15, 8: 4}
+    def add_sponsor(self, sponsor):
+        self.sponsors.append(sponsor)
 
-for key in data:
-    try:
-        res = divider(key, data[key])
-        result.append(res)
-    except Exception as error:
-        print(f"Помилка для пари ({key}: {data[key]}) -> {error}")
 
-print("Результат:", result)
+
+class Player:
+    def __init__(self, nickname, role, age):
+        self.nickname = nickname
+        self.role = role
+        self.age = age
+
+
+
+class Coach:
+    def __init__(self, name, experience_years):
+        self.name = name
+        self.experience_years = experience_years
+
+
+# --- Клас Турніру ---
+class Tournament:
+    def __init__(self, title, prize_pool):
+        self.title = title
+        self.prize_pool = prize_pool
+        self.teams = []
+
+    def add_team(self, team):
+        self.teams.append(team)
+
+
+
+class Match:
+    def __init__(self, team1, team2, score, tournament):
+        self.team1 = team1
+        self.team2 = team2
+        self.score = score
+        self.tournament = tournament
+
+
+
+class Sponsor:
+    def __init__(self, name, money):
+        self.name = name
+        self.money = money
